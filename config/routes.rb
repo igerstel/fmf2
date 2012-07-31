@@ -2,7 +2,7 @@ Fmf2::Application.routes.draw do
 
 root :to => "Farms#index"
 
-get "/produces/type/:id" => "Produces#showtype"
+get "/produces/type/" => "Produces#showtype", :as => "protype"
 
   resources :produces
 

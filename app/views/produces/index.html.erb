@@ -20,7 +20,7 @@
     <td><%= produce.amount %></td>
     <td><%= number_to_currency(produce.cost) %></td>
     <td>/<%= produce.bundle %></td>
-    <td><%= produce.category %></td>
+    <td><%= link_to "#{produce.category}", protype_path(produce.category) %></td>
     <td><%= produce.farm.address %></td>
     <td><%= produce.farm.farmer.name %></td>
     <td><%= link_to 'Show', produce %></td>
