@@ -1,0 +1,25 @@
+<h1>Listing farmers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @farmers.each do |farmer| %>
+  <tr>
+    <td><%= farmer.name %></td>
+    <td><%= link_to 'Show', farmer %></td>
+    <td><%= link_to 'Edit', edit_farmer_path(farmer) %></td>
+    <td><%= link_to 'Destroy', farmer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Farmer', new_farmer_path %> |
+<%= link_to 'Farms', farms_path %> |
+<%= link_to 'Produce', produces_path %>

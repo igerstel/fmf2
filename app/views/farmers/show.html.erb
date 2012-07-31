@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @farmer.name %>
+</p>
+
+
+<table>
+  <tr>
+    <th>Farm Address</th>
+    <th>Income</th>
+  </tr>
+
+<% @farmer.farms.each do |farm| %>
+  <tr>
+    <td><%= farm.address %></td>
+    <td><%= number_to_currency(farm.income) %></td>
+</tr>
+<% end %>
+</table>
+<br>
+
+<table>
+  <tr>
+    <th>Farm Address</th>
+    <th>Produce Type</th>
+    <th>Produce</th>
+    <th>Qty</th>
+    <th>Produce</th>
+    <th> / </th>
+    <th>Cost</th>
+    <th></th>
+  </tr>
+
+<% @farmer.produces.each do |produce| %>
+  <tr>
+    <td><%= produce.farm.address %></td>
+    <td><%= produce.category %></td>
+	<td><%= produce.name %></td>
+    <td><%= produce.amount %></td>
+    <td><%= produce.bundle %></td>
+    <td><%= number_to_currency(produce.cost) %> /<%= produce.bundle %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<%= link_to 'Edit', edit_farmer_path(@farmer) %> |
+<%= link_to 'Back', farmers_path %>
+

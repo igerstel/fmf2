@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @produce.name %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @produce.amount %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= number_to_currency(@produce.cost) %>
+</p>
+
+<p>
+  <b>Bundle:</b>
+  <%= @produce.bundle %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @produce.category %>
+</p>
+
+<p>
+  <b>Farm:</b>
+  <%= @produce.farm.address %>
+</p>
+
+
+<%= link_to 'Edit', edit_produce_path(@produce) %> |
+<%= link_to 'Back', produces_path %>

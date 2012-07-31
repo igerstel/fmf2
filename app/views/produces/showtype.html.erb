@@ -1,0 +1,37 @@
+<h1>Listing produces</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Cost</th>
+    <th>Bundle</th>
+    <th>Category</th>
+    <th>Farm</th>
+    <th>Farm</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @produces.each do |produce| %>
+  <tr>
+    <td><%= produce.name %></td>
+    <td><%= produce.amount %></td>
+    <td><%= number_to_currency(produce.cost) %></td>
+    <td>/<%= produce.bundle %></td>
+    <td><%= produce.category %></td>
+    <td><%= produce.farm.address %></td>
+    <td><%= produce.farm.farmer.name %></td>
+    <td><%= link_to 'Show', produce %></td>
+    <td><%= link_to 'Edit', edit_produce_path(produce) %></td>
+    <td><%= link_to 'Destroy', produce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Produce', new_produce_path %> |
+<%= link_to 'Farmers', farmers_path %> |
+<%= link_to 'Farms', farms_path %>

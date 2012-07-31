@@ -1,0 +1,49 @@
+<%= form_for(@produce) do |f| %>
+  <% if @produce.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@produce.errors.count, "error") %> prohibited this produce from being saved:</h2>
+
+      <ul>
+      <% @produce.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br>
+  Category
+  <div>
+    <select name="produce[category]">
+        <option value="fruits">fruits</option>
+        <option value="vegetables">vegetables</option>
+        <option value="livestock">livestock</option>
+        <option value="pumpkins">pumpkins</option>  
+    </select>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.number_field :amount %>
+
+    , <%= f.label :cost %> $<%= f.text_field :cost %>
+
+    <select name="produce[bundle]">
+        <option value="ea">ea</option>
+        <option value="lb">lb</option>
+        <option value="bushel">bushel</option>
+    </select>
+  </div>
+  Farm
+  <div class="field">
+    <%= f.collection_select :farm_id, Farm.all, :id, :address %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
