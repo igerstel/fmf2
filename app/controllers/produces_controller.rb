@@ -11,7 +11,7 @@ class ProducesController < ApplicationController
   end
 
  def showtype
-    @produces = Produce.find(params[:category])
+    @produces = Produce.find_all_by_category(params[:category])
 
     respond_to do |format|
       format.html # index.html.erb

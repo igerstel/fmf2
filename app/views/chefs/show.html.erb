@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @chef.name %>
+</p>
+
+<p>
+  <b>Bill:</b>
+  <%= @chef.bill %>
+</p>
+
+
+<%= link_to 'Edit', edit_chef_path(@chef) %> |
+<%= link_to 'Back', chefs_path %>

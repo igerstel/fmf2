@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120731183402) do
+ActiveRecord::Schema.define(:version => 20120801013016) do
+
+  create_table "chefs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "farmers", :force => true do |t|
     t.string   "name"
@@ -24,5 +30,12 @@ ActiveRecord::Schema.define(:version => 20120731183402) do
 
 # Could not dump table "produces" because of following StandardError
 #   Unknown type 'currency' for column 'cost'
+
+  create_table "restaurants", :force => true do |t|
+    t.string   "address"
+    t.decimal  "bill",       :default => 0.0
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
 
 end

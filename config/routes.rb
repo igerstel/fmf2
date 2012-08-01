@@ -1,8 +1,12 @@
 Fmf2::Application.routes.draw do
 
+  resources :restaurants
+
+  resources :chefs
+
 root :to => "Farms#index"
 
-get "/produces/type/" => "Produces#showtype", :as => "protype"
+get "/produces/type/:category" => "Produces#showtype", :as => "protype"
 
   resources :produces
 
