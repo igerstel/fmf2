@@ -1,6 +1,7 @@
 class ProducesController < ApplicationController
   # GET /produces
   # GET /produces.json
+
   def index
     @produces = Produce.all
 

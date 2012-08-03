@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Bill</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +11,6 @@
 <% @chefs.each do |chef| %>
   <tr>
     <td><%= chef.name %></td>
-    <td><%= chef.bill %></td>
     <td><%= link_to 'Show', chef %></td>
     <td><%= link_to 'Edit', edit_chef_path(chef) %></td>
     <td><%= link_to 'Destroy', chef, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,4 +20,6 @@
 
 <br />
 
-<%= link_to 'New Chef', new_chef_path %>
+<%= link_to 'New Chef', new_chef_path %> |
+<%= link_to 'Restaurants', restaurants_path %> |
+<%= link_to 'Inventories', inventoriess_path %>

@@ -15,10 +15,11 @@
     <%= f.label :address %><br />
     <%= f.text_field :address %>
   </div>
+
   <div class="field">
-    <%= f.label :bill %><br />
-    <%= f.text_field :bill %>
+    <%= f.collection_select(:chef_id, Chef.all, :id, :name) %>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

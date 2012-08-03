@@ -12,3 +12,9 @@ end
 
 #FARM HAS_MANY INVENTORY
 #PRODUCE HAS_MANY INVENTORY
+
+
+
+# from campfire:
+#you just need to make sure to use Produce.find(123).
+						#include(:farm).include(:farmer)
