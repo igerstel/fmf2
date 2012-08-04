@@ -3,6 +3,10 @@ class Farm < ActiveRecord::Base
 
   belongs_to :farmer
   has_many :produces
+
+  validates_associated :produces
+  validates :address, :length => { :minimum => 2 },
+   					  :uniqueness => { :case_sensitive => false }
 end
 
 

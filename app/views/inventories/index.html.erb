@@ -4,8 +4,8 @@
   <tr>
     <th>Cost</th>
     <th>Qty</th>
-    <th></th>
-    <th></th>
+    <th>Chef</th>
+    <th>Restaurant</th>
     <th></th>
   </tr>
 
@@ -13,6 +13,8 @@
   <tr>
     <td><%= inventory.cost %></td>
     <td><%= inventory.qty %></td>
+    <td><%= inventory.chef.name %></td>
+    <td><%= inventory.restaurant.address %></td>
     <td><%= link_to 'Show', inventory %></td>
     <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
     <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,4 +24,6 @@
 
 <br />
 
-<%= link_to 'New Inventory', new_inventory_path %>
+<%= link_to 'New Inventory', new_inventory_path %> |
+<%= link_to 'Chefs', chefs_path %> |
+<%= link_to 'Restaurants', restaurants_path %>
