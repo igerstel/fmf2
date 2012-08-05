@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cost: 9.99
+  qty: 1
+  restaurant_id: 1
+
+two:
+  cost: 9.99
+  qty: 1
+  restaurant_id: 1

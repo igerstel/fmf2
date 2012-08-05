@@ -1,5 +1,7 @@
 Fmf2::Application.routes.draw do
 
+  resources :orders
+
   resources :inventories
 
   resources :restaurants

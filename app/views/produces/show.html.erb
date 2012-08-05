@@ -33,3 +33,36 @@
 
 <%= link_to 'Edit', edit_produce_path(@produce) %> |
 <%= link_to 'Back', produces_path %>
+
+
+
+
+
+
+<%= form_for(@produce) do |f| %>
+  <% if @produce.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@produce.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @produce.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

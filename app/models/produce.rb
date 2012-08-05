@@ -2,6 +2,7 @@ class Produce < ActiveRecord::Base
   attr_accessible :amount, :bundle, :category, :cost, :name, :farm_id
 
   belongs_to :farm
+  has_many :orders, :through => :order_items
 
   validates :amount, :numericality => { :only_integer => true,
   									 	:greater_than_or_equal_to => 0 }
@@ -11,7 +12,6 @@ class Produce < ActiveRecord::Base
     	:message => "%{value} is not a valid category" }
   validates :cost, :numericality => { :greater_than => 0 }
   validates :name, :length => { :minimum => 2 }
-
 
  def farmername
    return farm.farmer.name
