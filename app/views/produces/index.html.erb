@@ -1,5 +1,20 @@
 <h1>Listing produces</h1>
 
+<%= search_form_for @search do |f| %>
+    <div class="field">
+        <%= f.label :name_cont, "Name?" %>
+        <%= f.text_field :name_cont %>
+    </div>
+    <div class="field">
+        <%= f.label :amount_lteq, "Distance <" %>
+        <%= f.text_field :amount_lteq %>
+    </div>
+    <div class="actions"><%= f.submit "Search" %>
+    </div>
+<% end %>
+
+<br><br><br>
+
 <table>
   <tr>
     <th>Name</th>
