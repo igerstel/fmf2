@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </div>
+
+  <div class="field">
     <%= f.collection_select(:chef_id, Chef.all, :id, :name) %>
   </div>
   

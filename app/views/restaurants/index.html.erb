@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Address</th>
+    <th>Zip</th>
     <th>Chef</th>
     <th>Bill</th>
     <th></th>
@@ -13,6 +14,7 @@
 <% @restaurants.each do |restaurant| %>
   <tr>
     <td><%= restaurant.address %></td>
+    <td><%= restaurant.zip %></td>
     <td><%= restaurant.chef.name %></td>
     <td>$<%= restaurant.bill %></td>
     <td><%= link_to 'Show', restaurant %></td>

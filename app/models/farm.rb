@@ -1,5 +1,5 @@
 class Farm < ActiveRecord::Base
-  attr_accessible :address, :farmer_id
+  attr_accessible :address, :zip, :farmer_id
 
   belongs_to :farmer
   has_many :produces

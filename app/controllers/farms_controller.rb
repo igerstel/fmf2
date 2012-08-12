@@ -41,6 +41,7 @@ class FarmsController < ApplicationController
   # POST /farms.json
   def create
     @farm = Farm.new(params[:farm])
+    (@farm.lat, @farm.lon) = view_context.getcoordf(@farm.zip)
 
     respond_to do |format|
       if @farm.save
@@ -57,6 +58,7 @@ class FarmsController < ApplicationController
   # PUT /farms/1.json
   def update
     @farm = Farm.find(params[:id])
+    (@farm.lat, @farm.lon) = view_context.getcoordf(@farm.zip)
 
     respond_to do |format|
       if @farm.update_attributes(params[:farm])

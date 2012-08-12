@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120805194600) do
+ActiveRecord::Schema.define(:version => 20120812073922) do
 
   create_table "chefs", :force => true do |t|
     t.string   "name"
@@ -28,9 +28,12 @@ ActiveRecord::Schema.define(:version => 20120805194600) do
   create_table "farms", :force => true do |t|
     t.string   "address"
     t.integer  "farmer_id"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.decimal  "income",     :default => 0.0
+    t.integer  "zip",        :default => 60601
+    t.decimal  "lat",        :default => 41.9
+    t.decimal  "lon",        :default => -87.6
   end
 
   create_table "inventories", :force => true do |t|
@@ -70,9 +73,12 @@ ActiveRecord::Schema.define(:version => 20120805194600) do
   create_table "restaurants", :force => true do |t|
     t.string   "address"
     t.decimal  "bill",       :default => 0.0
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "chef_id"
+    t.integer  "zip",        :default => 60601
+    t.decimal  "lat",        :default => 41.9
+    t.decimal  "lon",        :default => -87.6
   end
 
 end

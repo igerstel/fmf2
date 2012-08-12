@@ -1,5 +1,5 @@
 class Restaurant < ActiveRecord::Base
-  attr_accessible :address, :chef_id#, :bill
+  attr_accessible :address, :zip, :chef_id#, :bill
 
   belongs_to :chef
   has_many :orders
