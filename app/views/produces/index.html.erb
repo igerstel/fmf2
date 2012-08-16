@@ -37,7 +37,7 @@
     <td>/<%= produce.bundle %></td>
     <td><%= link_to "#{produce.category}", protype_path(produce.category) %></td>
     <td><%= produce.farm.address %></td>
-    <td><%= produce.farmername %></td>
+    <td><%= produce.farm %></td>
     <td><%= link_to 'Show', produce %></td>
     <td><%= link_to 'Edit', edit_produce_path(produce) %></td>
     <td><%= link_to 'Destroy', produce, method: :delete, data: { confirm: 'Are you sure?' } %></td>

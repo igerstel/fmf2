@@ -12,9 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :cost %><br />
-    <%= f.text_field :cost %>
-  </div>
+        <%= f.label "product" %><br />
+        <%= select_tag :produce_id, 
+					   options_for_select([nil] + Produce.all.map{|p| [p.name, p.id]}),
+					   allow_blank: true
+		%>
+      </div>
   <div class="field">
     <%= f.label :qty %><br />
     <%= f.number_field :qty %>

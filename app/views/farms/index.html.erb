@@ -14,7 +14,7 @@
   <tr>
     <td><%= farm.address %></td>
     <td><%= farm.zip %></td>
-    <td><%= farm.farmer.name %></td>
+    <td><%= farm.farmer %></td>
     <td><%= link_to 'Show', farm %></td>
     <td><%= link_to 'Edit', edit_farm_path(farm) %></td>
     <td><%= link_to 'Destroy', farm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
